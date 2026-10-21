@@ -340,7 +340,62 @@ Trong CSS, `minmax(0, 1fr)` cho phép cột thu nhỏ theo vùng chứa, kết h
 
 Ảnh bìa và tên phục vụ nhận diện; giá bán dùng màu đỏ sẫm và cỡ chữ lớn để hỗ trợ so sánh. Thể loại, tác giả và giá gốc được giảm mức độ nổi bật. Nhãn giảm đặt gần vùng giá, không phủ lên ảnh.
 
-Liên kết chính rộng theo vùng nội dung thẻ, chiều cao tối thiểu 46px. Hover đổi màu nền; `:focus-visible` tạo viền khi dùng bàn phím. Thông tin tên và giá luôn xuất hiện, không phụ thuộc thao tác rê chuột.
+Trong cấu hình ban đầu, liên kết chính rộng theo vùng nội dung thẻ, chiều cao tối thiểu 46px. Hover đổi màu nền; `:focus-visible` tạo viền khi dùng bàn phím. Thông tin tên và giá luôn xuất hiện, không phụ thuộc thao tác rê chuột.
+
+### 6.6. Điều chỉnh định dạng ảnh và đường dẫn tài nguyên
+
+Bốn ảnh bìa được chuyển từ SVG sang JPG và đặt trong thư mục `images/`. Các đường dẫn trong HTML được cập nhật theo định dạng mới để khớp với tệp đã đưa lên GitHub:
+
+```html
+<img src="images/mien-yen.jpg"
+     alt="Bìa minh họa sách Miền yên"
+     width="400"
+     height="560">
+```
+
+Kích thước `width` và `height` thể hiện tỷ lệ hiển thị dự kiến trong HTML; ảnh JPG có kích thước thực tế 800 × 1120px, cùng tỷ lệ với bìa ban đầu. CSS tiếp tục dùng `object-fit: contain` nên không kéo méo ảnh.
+
+CSS được đặt trong thư mục `css/`, vì vậy liên kết stylesheet trong HTML dùng đường dẫn tương đối:
+
+```html
+<link rel="stylesheet" href="css/style.css">
+```
+
+Sau khi triển khai GitHub Pages, ảnh và định dạng trang đã được kiểm tra, xác nhận hiển thị đúng. Việc tổ chức tài nguyên theo thư mục giúp mã nguồn rõ ràng và dễ thay thế ảnh hoặc chỉnh giao diện.
+
+### 6.7. Phương án tinh chỉnh nút trên điện thoại
+
+Để tăng khả năng đọc và mở rộng vùng thao tác trên màn hình nhỏ, bản CSS bổ sung điều chỉnh liên kết **Xem chi tiết** ở chiều rộng dưới 600px:
+
+| Thuộc tính | Cấu hình ban đầu | Cấu hình bổ sung | Mục đích |
+| --- | --- | --- | --- |
+| Chiều cao tối thiểu | `46px` | `52px` | Tăng vùng chạm. |
+| Cỡ chữ | `14px` | `16px` | Giúp nhãn thao tác dễ đọc hơn. |
+| Khoảng đệm | `10px 14px` | `12px 16px` | Tăng khoảng trống quanh nội dung. |
+| Phạm vi áp dụng | Quy tắc chung | Dưới `600px` | Giữ cấu hình máy tính và máy tính bảng. |
+
+Đoạn CSS bổ sung nằm trong Media Query dành cho điện thoại:
+
+```css
+@media (max-width: 599px) {
+  .book-card__link {
+    min-height: 52px;
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+}
+```
+
+`min-height` quy định chiều cao tối thiểu, vẫn cho phép liên kết cao hơn khi nội dung cần thêm chỗ. `font-size` thay đổi cỡ chữ; `padding` tạo khoảng đệm bên trong. Do chỉ ghi đè trong Media Query, thay đổi này không tác động đến các màn hình từ 600px trở lên.
+
+Tinh chỉnh này được AI đề xuất sau lượt kiểm tra ban đầu. Kết quả kiểm tra phiên bản có tinh chỉnh được tách khỏi các kết quả đã xác nhận ở mục sau.
+
+| Tình huống cần đối chiếu | Kết quả mong đợi |
+| --- | --- |
+| Màn hình 375–390px | Liên kết cao tối thiểu 52px, chữ 16px, nội dung không tràn hoặc bị che. |
+| Màn hình 768px và 1366px | Cấu hình liên kết chung được giữ nguyên. |
+| Kích hoạt Xem chi tiết | Vẫn điều hướng đúng phần sách. |
+| Dùng bàn phím | Viền focus vẫn rõ ràng. |
 
 ### Kết quả kiểm tra giao diện
 
@@ -352,7 +407,7 @@ Kết quả kiểm tra có hỗ trợ AI trên bản giao diện cục bộ:
 | 768px | 2 cột. |
 | 390px, 375px, 320px | 1 cột; không tràn ngang tại các mốc đã thử. |
 | Hình ảnh | Bốn ảnh tải thành công. |
-| Liên kết chính | Chiều cao tối thiểu 46px trong các mốc đã thử. |
+| Liên kết chính trước tinh chỉnh bổ sung | Chiều cao tối thiểu 46px trong các mốc đã thử. |
 | Điều hướng | Liên kết chi tiết sách Miền yên và liên kết quay lại hoạt động. |
 | Bàn phím | Tab chuyển đến liên kết sách tiếp theo và có viền focus. |
 
@@ -373,7 +428,7 @@ Sau khi triển khai GitHub Pages, sinh viên đã kiểm tra và xác nhận c�
 | Điều hướng | Xem chi tiết đến đúng sách và quay lại danh sách được. |
 | Tài nguyên triển khai | CSS và ảnh tải đúng trên website trực tuyến. |
 
-Phần xác nhận này được cập nhật theo kết quả sinh viên cung cấp sau khi tự kiểm tra. Kiểm tra trình đọc màn hình và mức phóng to 200% được để ở kế hoạch bổ sung.
+Các kết quả tự kiểm tra áp dụng cho bản đã triển khai trước tinh chỉnh ở mục 6.7. Kiểm tra trình đọc màn hình và mức phóng to 200% nằm trong kế hoạch bổ sung.
 
 ### Đối chiếu yêu cầu bài tập
 
@@ -405,13 +460,16 @@ AI hỗ trợ:
 - Tạo HTML/CSS, bìa JPG và dữ liệu sách mẫu.
 - Kiểm tra bản giao diện như mô tả ở mục 6.
 - Phát hiện và sửa lệch giá ở thẻ không giảm giá bằng cách điều chỉnh Flexbox trong vùng giá/thao tác.
+- Đề xuất tăng kích thước liên kết trên điện thoại và giải thích quy tắc CSS ở mục 6.7.
 - Soạn hướng dẫn và tài liệu dự án.
 
 **Phần thực hiện cá nhân:** Lựa chọn Fahasa, cung cấp ảnh khảo sát, duyệt phương án thẻ dọc, tạo repository, tổ chức tệp, lựa chọn ảnh JPG và triển khai GitHub Pages.
 
 **Kết quả tự kiểm tra:** Đã kiểm tra bản trực tuyến và xác nhận nội dung, ảnh, bố cục và điều hướng đúng như bảng kết quả ở mục 6.
 
-**Điều chỉnh theo lựa chọn cá nhân:** Chuyển bốn bìa từ SVG sang JPG, cập nhật đường dẫn ảnh sang `.jpg` và sử dụng cấu trúc `css/style.css`. AI hỗ trợ chuyển đổi ảnh và cập nhật bản mã; sinh viên thực hiện các bước đưa tệp lên repository và kiểm tra kết quả triển khai.
+**Điều chỉnh theo lựa chọn cá nhân:** Chọn định dạng JPG cho bìa sách, sử dụng thư mục `images/` và cấu trúc `css/style.css`. AI hỗ trợ chuyển đổi ảnh và cập nhật bản mã; sinh viên quản lý tệp trên repository, thay thế ảnh và kiểm tra kết quả triển khai.
+
+**Tinh chỉnh bổ sung:** AI đề xuất tăng kích thước liên kết trên điện thoại; đoạn mã và tiêu chí đối chiếu được trình bày tại mục 6.7. Phần này là đề xuất bổ sung, không thay thế các cải tiến tên sách, giá, hình ảnh và bố cục đã thực hiện.
 
 Chi tiết prompt và quá trình sử dụng AI: [AI_USAGE.md](AI_USAGE.md).
 
@@ -438,8 +496,9 @@ Quá trình sử dụng AI được ghi theo từng giai đoạn để có thể
 - [x] Đã tự kiểm tra nội dung, hình ảnh và bố cục máy tính/điện thoại.
 - [x] Đã kiểm tra Xem chi tiết và Quay lại danh sách.
 - [x] Đã cập nhật tài liệu theo định dạng ảnh JPG.
-- [ ] Bổ sung minh chứng một điểm do bản thân phát hiện và trực tiếp sửa HTML/CSS.
-- [ ] Bổ sung phần giải thích cá nhân về đoạn mã đã trực tiếp sửa.
+- [ ] Ghi cụ thể vấn đề tự phát hiện, đoạn HTML/CSS trực tiếp chỉnh sửa và kết quả trước/sau.
+- [ ] Giải thích vai trò của thuộc tính trong đoạn mã đã trực tiếp sửa.
+- [ ] Nếu áp dụng tinh chỉnh ở mục 6.7, kiểm tra lại kích thước liên kết và điều hướng sau triển khai.
 
 ### Kịch bản kiểm tra bổ sung
 
