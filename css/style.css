@@ -1,1 +1,96 @@
+/* 1. Màu và kích thước dùng chung */
+:root {
+  --accent: #a82732;
+  --accent-dark: #801b25;
+  --ink: #252525;
+  --muted: #646464;
+  --page: #f6f5f2;
+  --line: #dedbd5;
+  --white: #ffffff;
+  --gap: 24px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--page); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+a { color: inherit; }
+img { max-width: 100%; }
+h1, h2, h3, p { margin: 0; }
+.container { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+:focus-visible { outline: 3px solid #1c5b9b; outline-offset: 5px; }
+[id] { scroll-margin-top: 24px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.skip-link { position: absolute; top: -100px; left: 16px; z-index: 2; padding: 12px 20px; color: white; background: var(--ink); }
+.skip-link:focus { top: 12px; }
 
+/* 2. Đầu trang và giới thiệu */
+.site-header { border-bottom: 1px solid var(--line); background: var(--white); }
+.header-inner { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 700; text-decoration: none; letter-spacing: -1px; }
+.brand__mark { display: grid; place-items: center; width: 39px; height: 39px; color: white; background: var(--accent); border-radius: 7px; font-family: Georgia, serif; font-size: 27px; }
+.brand__dot { color: var(--accent); margin-left: -10px; }
+.header-note { font-size: 13px; color: var(--muted); }
+.intro { padding: 54px 0 42px; }
+.eyebrow { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+h1 { margin: 9px 0 13px; font-size: clamp(32px, 4vw, 52px); line-height: 1.18; letter-spacing: -1.8px; }
+h1 span { color: var(--accent); }
+.intro__text { color: var(--muted); font-size: 16px; }
+.section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line); margin-bottom: 24px; }
+.section-heading h2 { font-size: 22px; letter-spacing: -.5px; }
+.section-heading > span { font-size: 12px; color: var(--muted); }
+
+/* 3. Danh sách: thẻ trong cùng hàng giãn bằng nhau */
+.book-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); }
+.book-card { min-width: 0; display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.book-card__image { height: 250px; display: flex; align-items: center; justify-content: center; padding: 22px; background: #eeece7; }
+.book-card__image img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(4px 7px 6px #00000020); }
+.book-card__body { flex: 1; display: flex; flex-direction: column; padding: 20px; }
+.book-card__category { margin-bottom: 8px; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; }
+.book-card h3 { font-size: 18px; line-height: 1.5; overflow-wrap: anywhere; }
+.book-card__author { color: var(--muted); margin-top: 7px; margin-bottom: 22px; font-size: 13px; }
+/* Khoảng trống co giãn nằm trước giá; không cắt tên hoặc cố định chiều cao chữ. */
+.book-card__purchase { margin-top: auto; display: flex; flex-direction: column; }
+.book-card__price { color: var(--accent); font-size: 24px; font-weight: 700; line-height: 1.4; white-space: nowrap; }
+.book-card__offer { min-height: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 4px; font-size: 13px; }
+.book-card__offer del { color: var(--muted); }
+/* Giữ cùng một vùng giá phụ cho cả sách không giảm giá. */
+.book-card__price:only-of-type { margin-bottom: 30px; }
+.discount { color: var(--accent-dark); background: #f9e9e9; padding: 2px 7px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+.book-card__link { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 46px; margin-top: 18px; padding: 10px 14px; color: white; background: var(--accent); border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 700; transition: background-color .15s; }
+.book-card__link:hover { background: var(--accent-dark); }
+.book-card__link:active { background: #63131b; }
+.book-card__link span { font-size: 20px; line-height: 1; }
+.sample-note { color: var(--muted); font-size: 12px; line-height: 1.8; margin-top: 22px; max-width: 850px; }
+
+/* 4. Thông tin chi tiết cùng trang */
+.details { padding-top: 64px; padding-bottom: 64px; }
+.details-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.book-detail { padding: 28px; border: 1px solid var(--line); background: var(--white); border-radius: 10px; overflow-wrap: anywhere; }
+.book-detail:target { border-color: var(--accent); box-shadow: 0 0 0 2px #a8273220; }
+.book-detail h3 { font-size: 20px; line-height: 1.5; margin-top: 10px; }
+.book-detail__meta { font-size: 13px; color: var(--muted); margin: 8px 0 16px; }
+.book-detail > p:not([class]) { font-size: 15px; }
+.back-link { display: inline-block; padding-block: 12px; margin-top: 12px; color: var(--accent); font-size: 14px; text-underline-offset: 4px; }
+.back-link:hover { color: var(--accent-dark); }
+.site-footer { border-top: 1px solid var(--line); padding: 24px 0; }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 12px; }
+
+/* 5. Máy tính bảng và điện thoại */
+@media (max-width: 1099px) {
+  .book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 599px) {
+  .container { width: calc(100% - 32px); }
+  .header-inner { min-height: 72px; }
+  .header-note { display: none; }
+  .intro { padding: 36px 0 30px; }
+  h1 { letter-spacing: -1px; }
+  .intro__text { font-size: 15px; }
+  .section-heading { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .book-grid, .details-grid { grid-template-columns: minmax(0, 1fr); }
+  .book-card__image { height: 280px; }
+  .book-card__body { padding: 22px; }
+  .details { padding-top: 44px; padding-bottom: 40px; }
+  .book-detail { padding: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .book-card__link { transition: none; }
+}
