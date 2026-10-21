@@ -90,6 +90,11 @@ h1 span { color: var(--accent); }
   .book-card__body { padding: 22px; }
   .details { padding-top: 44px; padding-bottom: 40px; }
   .book-detail { padding: 22px; }
+/* Tăng kích thước nút trên điện thoại */
+.book-card__link {
+  min-height: 52px;
+  font-size: 16px;
+  padding: 12px 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .book-card__link { transition: none; }
