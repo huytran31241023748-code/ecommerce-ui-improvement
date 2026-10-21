@@ -6,6 +6,8 @@
 - **Phạm vi hỗ trợ:** Khảo sát và phân tích giao diện, đề xuất phương án, tạo HTML/CSS, kiểm tra bản thực hành và soạn tài liệu.
 - **Website tham khảo:** https://www.fahasa.com/
 - **Dự án:** `ecommerce-ui-improvement` – Góc sách.
+- **Repository:** https://github.com/huytran31241023748-code/ecommerce-ui-improvement
+- **Website:** https://huytran31241023748-code.github.io/ecommerce-ui-improvement/
 
 AI được sử dụng xuyên suốt các bước phân tích, thiết kế, xây dựng và kiểm tra. Phương án được trao đổi trước khi lập trình; sau khi lựa chọn thẻ dọc, yêu cầu triển khai được giới hạn vào một trang HTML/CSS có thể chạy trực tiếp.
 
@@ -166,7 +168,7 @@ cách xử lý tên dài, giá và Media Queries.
 Chỉ ghi nhận kết quả kiểm tra trình duyệt khi đã thực sự chạy thử.
 ```
 
-**Kết quả sử dụng:** Tạo trang Góc sách với bốn sách mẫu, bìa SVG, phần thông tin chi tiết nội trang và CSS responsive. Mã ban đầu đặt CSS cạnh HTML; cấu trúc theo đề đặt CSS trong `css/`, nên đường dẫn stylesheet được nêu rõ trong prompt chuẩn hóa và tài liệu dự án.
+**Kết quả sử dụng:** Tạo trang Góc sách với bốn sách mẫu, bìa sách, phần thông tin chi tiết nội trang và CSS responsive. Mã ban đầu đặt CSS cạnh HTML; cấu trúc theo đề đặt CSS trong `css/`, nên đường dẫn stylesheet được nêu rõ trong prompt chuẩn hóa và tài liệu dự án.
 
 ## 4. Kết quả AI đề xuất
 
@@ -190,7 +192,7 @@ Chỉ ghi nhận kết quả kiểm tra trình duyệt khi đã thực sự ch�
 ### Kết quả thiết kế và mã nguồn
 
 - Trang Góc sách với bốn sách mẫu có độ dài tên khác nhau.
-- Bốn sách mẫu có bìa SVG, tên, tác giả, giá và mô tả.
+- Bốn sách mẫu có bìa sách, tên, tác giả, giá và mô tả.
 - Thẻ có ảnh, thể loại, tên đầy đủ, tác giả, giá và liên kết **Xem chi tiết**.
 - Giá gốc và mức giảm được thể hiện khi có dữ liệu; có một sách chỉ hiển thị giá bán.
 - HTML5 ngữ nghĩa; CSS tách riêng; Grid cho danh sách, Flexbox trong thẻ.
@@ -292,7 +294,9 @@ Bản giao diện đầu tiên đặt `style.css` cạnh `index.html`. Cấu tr�
 <link rel="stylesheet" href="css/style.css">
 ```
 
-Đường dẫn ảnh giữ dạng `images/mien-yen.svg`. Thay đổi cấu trúc thư mục cần được kiểm tra lại trên bản tự tạo và bản tải lên GitHub; nhật ký này chưa ghi nhận kết quả kiểm tra của hai bản đó.
+Đường dẫn ảnh dùng dạng `images/mien-yen.jpg`. Sau khi đưa tệp lên repository và triển khai GitHub Pages, sinh viên đã kiểm tra và xác nhận ảnh, CSS cùng nội dung hiển thị đúng trên bản trực tuyến.
+
+Ảnh bìa được chuyển sang JPG theo yêu cầu, kích thước 800 × 1120px; đường dẫn ảnh trong HTML được cập nhật tương ứng.
 
 ### 5.2. Phần lựa chọn và bổ sung cá nhân
 
@@ -303,20 +307,33 @@ Bản giao diện đầu tiên đặt `style.css` cạnh `index.html`. Cấu tr�
 
 ### 5.3. Kết quả tự kiểm tra và chỉnh sửa cá nhân
 
-Chưa cập nhật kết quả tự kiểm tra và chỉnh sửa cá nhân.
+Sau khi triển khai, sinh viên xác nhận đã kiểm tra và các nội dung hoạt động đúng.
 
-### 5.4. Các tình huống kiểm tra bổ sung
+| Nội dung | Kết quả tự kiểm tra |
+| --- | --- |
+| GitHub Pages | Trang truy cập được bằng đường dẫn website. |
+| Nội dung | Đủ bốn sách; tên, giá, giá gốc và mức giảm đúng bộ mẫu. |
+| Ảnh | Bốn bìa JPG hiển thị đúng, không mất ảnh. |
+| Bố cục | Hiển thị phù hợp ở giao diện máy tính và điện thoại, không tràn ngang. |
+| Liên kết | Xem chi tiết đến đúng phần sách; quay lại danh sách hoạt động. |
+| Tài nguyên | Đường dẫn `css/style.css` và `images/*.jpg` hoạt động trên bản triển khai. |
+
+**Điều chỉnh theo lựa chọn cá nhân:** Chọn chuyển bìa SVG sang JPG và cập nhật đường dẫn ảnh, tổ chức CSS trong thư mục `css`. AI hỗ trợ chuyển đổi ảnh và bản mã; sinh viên thực hiện các bước quản lý tệp và kiểm tra bản triển khai.
+
+Việc tự kiểm tra đã được xác nhận. Minh chứng về một lỗi do bản thân phát hiện và trực tiếp sửa HTML/CSS được ghi riêng khi có nội dung cụ thể.
+
+### 5.4. Tổng hợp phạm vi kiểm tra
 
 | Tình huống | Mục tiêu đối chiếu | Trạng thái |
 | --- | --- | --- |
-| Bấm từng liên kết của cả bốn sách | Xác nhận mọi liên kết khớp đúng ID chi tiết. | Chưa ghi nhận đủ bốn trường hợp. |
+| Điều hướng chi tiết và quay lại | Đối chiếu phần sách được mở. | Sinh viên xác nhận hoạt động đúng. |
 | Mở `index.html` trực tiếp trên máy cá nhân | Kiểm tra đường dẫn CSS/ảnh trong cấu trúc tự tạo. | Chưa cập nhật. |
-| Xem bản trên GitHub hoặc hosting | Kiểm tra sau khi tải tệp, phân biệt hoa/thường của tên ảnh. | Chưa cập nhật. |
+| Xem bản trên GitHub Pages | Kiểm tra ảnh, CSS, bố cục và điều hướng sau triển khai. | Sinh viên xác nhận hoạt động đúng. |
 | Phóng to 200% | Xác định chữ và thao tác có bị che hoặc tràn. | Chưa kiểm tra. |
 | Thêm sách thứ năm, giá dài hoặc ảnh khác tỷ lệ | Đánh giá khả năng dùng lại mẫu thẻ với dữ liệu mới. | Chưa kiểm tra. |
-| Dùng điện thoại thật | Đánh giá thao tác chạm và khả năng đọc ngoài khung mô phỏng. | Chưa kiểm tra. |
+| Giao diện điện thoại | Đánh giá tên, ảnh, giá, bố cục và liên kết ở màn hình nhỏ. | Sinh viên xác nhận giao diện đúng; không ghi riêng thiết bị cụ thể. |
 
-Các tình huống này được tách khỏi kết quả đã thực hiện để tránh coi kế hoạch kiểm tra là bằng chứng hoàn thành.
+Bảng phân biệt các kết quả đã xác nhận với những tình huống mở rộng chưa thực hiện.
 
 ## 6. Phần tôi hiểu và có thể giải thích
 
@@ -335,7 +352,7 @@ Các thành phần mã nguồn trọng tâm:
 - `:hover` và `:focus-visible` phản hồi thao tác chuột, bàn phím.
 - Biến CSS trong `:root` giúp thay đổi màu và khoảng cách dùng chung.
 
-**Phần giải thích cá nhân:** Chưa cập nhật.
+**Phần giải thích mã nguồn:** Các nội dung kỹ thuật được trình bày ở mục 6.1–6.6. Minh chứng giải thích đoạn mã do cá nhân trực tiếp sửa chưa được bổ sung.
 
 ### 6.1. Cấu trúc trang và liên kết nội bộ
 
