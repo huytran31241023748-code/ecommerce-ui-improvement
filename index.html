@@ -1,1 +1,118 @@
-
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bài thực hành cải tiến thẻ sách bằng HTML5 và CSS3: tên đầy đủ, giá rõ ràng, bố cục thích ứng.">
+  <title>Khám phá sách hay | Góc sách</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#main" aria-label="Góc sách – đầu trang"><span class="brand__mark" aria-hidden="true">G.</span> góc sách<span class="brand__dot">.</span></a>
+      <span class="header-note">Mỗi cuốn sách, một góc nhìn mới.</span>
+    </div>
+  </header>
+  <main id="main" class="container">
+    <div class="intro">
+      <p class="eyebrow">TUYỂN CHỌN CHO BẠN</p>
+      <h1>Khám phá <span>sách hay.</span></h1>
+      <p class="intro__text">Một khoảng dừng cho những trang sách mới.<br>Chọn cuốn sách cho hành trình của riêng bạn.</p>
+    </div>
+    <section class="collection" id="books" aria-labelledby="books-heading">
+      <div class="section-heading"><h2 id="books-heading">Sách nổi bật</h2><span>04 cuốn sách · 04 góc nhìn</span></div>
+      <div class="book-grid">
+      <article class="book-card" aria-labelledby="title-mien-yen">
+        <div class="book-card__image"><img src="images/mien-yen.svg" alt="Bìa minh họa sách Miền yên" width="400" height="560"></div>
+        <div class="book-card__body">
+          <p class="book-card__category">Tản văn</p>
+          <h3 id="title-mien-yen">Miền yên</h3>
+          <p class="book-card__author">An Nhiên</p>
+          <div class="book-card__purchase">
+            <p class="book-card__price"><span class="sr-only">Giá bán: </span>80.000 đ</p>
+            <p class="book-card__offer"><span class="sr-only">Giá gốc: </span><del>100.000 đ</del><span class="discount">Giảm 20%</span></p>
+            <a class="book-card__link" href="#detail-mien-yen" aria-label="Xem chi tiết: Miền yên">Xem chi tiết <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="book-card" aria-labelledby="title-khu-vuon">
+        <div class="book-card__image"><img src="images/khu-vuon.svg" alt="Bìa minh họa sách Khu vườn nhỏ giữa những ngày bận rộn" width="400" height="560"></div>
+        <div class="book-card__body">
+          <p class="book-card__category">Lối sống</p>
+          <h3 id="title-khu-vuon">Khu vườn nhỏ giữa những ngày bận rộn</h3>
+          <p class="book-card__author">Minh Hà</p>
+          <div class="book-card__purchase">
+            <p class="book-card__price"><span class="sr-only">Giá bán: </span>125.000 đ</p>
+            
+            <a class="book-card__link" href="#detail-khu-vuon" aria-label="Xem chi tiết: Khu vườn nhỏ giữa những ngày bận rộn">Xem chi tiết <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="book-card" aria-labelledby="title-vi-sao">
+        <div class="book-card__image"><img src="images/vi-sao.svg" alt="Bìa minh họa sách Đi qua những vì sao — Hành trình khám phá bầu trời đêm" width="400" height="560"></div>
+        <div class="book-card__body">
+          <p class="book-card__category">Khám phá</p>
+          <h3 id="title-vi-sao">Đi qua những vì sao — Hành trình khám phá bầu trời đêm</h3>
+          <p class="book-card__author">Hải Đăng</p>
+          <div class="book-card__purchase">
+            <p class="book-card__price"><span class="sr-only">Giá bán: </span>150.000 đ</p>
+            <p class="book-card__offer"><span class="sr-only">Giá gốc: </span><del>200.000 đ</del><span class="discount">Giảm 25%</span></p>
+            <a class="book-card__link" href="#detail-vi-sao" aria-label="Xem chi tiết: Đi qua những vì sao — Hành trình khám phá bầu trời đêm">Xem chi tiết <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="book-card" aria-labelledby="title-sang-tao">
+        <div class="book-card__image"><img src="images/sang-tao.svg" alt="Bìa minh họa sách Sổ tay sáng tạo mỗi ngày" width="400" height="560"></div>
+        <div class="book-card__body">
+          <p class="book-card__category">Kỹ năng</p>
+          <h3 id="title-sang-tao">Sổ tay sáng tạo mỗi ngày</h3>
+          <p class="book-card__author">Thanh Mai</p>
+          <div class="book-card__purchase">
+            <p class="book-card__price"><span class="sr-only">Giá bán: </span>135.000 đ</p>
+            <p class="book-card__offer"><span class="sr-only">Giá gốc: </span><del>150.000 đ</del><span class="discount">Giảm 10%</span></p>
+            <a class="book-card__link" href="#detail-sang-tao" aria-label="Xem chi tiết: Sổ tay sáng tạo mỗi ngày">Xem chi tiết <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+      </div>
+      <p class="sample-note"><strong>Dữ liệu minh họa:</strong> Tên sách, tác giả, giá và bìa được tạo riêng cho bài tập; không phải thông tin sản phẩm hay khuyến mãi đã xác minh của Fahasa.</p>
+    </section>
+    <section class="details" aria-labelledby="details-heading">
+      <div class="section-heading"><h2 id="details-heading">Đọc thêm một chút</h2><span>Giới thiệu sách minh họa</span></div>
+      <div class="details-grid">
+      <article class="book-detail" id="detail-mien-yen" tabindex="-1" aria-labelledby="detail-title-mien-yen">
+        <p class="eyebrow">THÔNG TIN SÁCH / 01</p>
+        <h3 id="detail-title-mien-yen">Miền yên</h3>
+        <p class="book-detail__meta">An Nhiên · Tản văn</p>
+        <p>Những lát cắt đời thường và khoảng lặng nhỏ giúp ta chậm lại, quan sát và chăm sóc cuộc sống của mình.</p>
+        <a class="back-link" href="#books">← Quay lại danh sách sách</a>
+      </article>
+      <article class="book-detail" id="detail-khu-vuon" tabindex="-1" aria-labelledby="detail-title-khu-vuon">
+        <p class="eyebrow">THÔNG TIN SÁCH / 02</p>
+        <h3 id="detail-title-khu-vuon">Khu vườn nhỏ giữa những ngày bận rộn</h3>
+        <p class="book-detail__meta">Minh Hà · Lối sống</p>
+        <p>Một câu chuyện minh họa về việc tạo khoảng xanh trong không gian sống và dành thời gian cho những điều giản dị.</p>
+        <a class="back-link" href="#books">← Quay lại danh sách sách</a>
+      </article>
+      <article class="book-detail" id="detail-vi-sao" tabindex="-1" aria-labelledby="detail-title-vi-sao">
+        <p class="eyebrow">THÔNG TIN SÁCH / 03</p>
+        <h3 id="detail-title-vi-sao">Đi qua những vì sao — Hành trình khám phá bầu trời đêm</h3>
+        <p class="book-detail__meta">Hải Đăng · Khám phá</p>
+        <p>Lời mời làm quen với bầu trời đêm qua những chủ đề về quan sát, trí tò mò và hành trình khám phá.</p>
+        <a class="back-link" href="#books">← Quay lại danh sách sách</a>
+      </article>
+      <article class="book-detail" id="detail-sang-tao" tabindex="-1" aria-labelledby="detail-title-sang-tao">
+        <p class="eyebrow">THÔNG TIN SÁCH / 04</p>
+        <h3 id="detail-title-sang-tao">Sổ tay sáng tạo mỗi ngày</h3>
+        <p class="book-detail__meta">Thanh Mai · Kỹ năng</p>
+        <p>Những gợi ý minh họa để ghi chép ý tưởng, thử cách nhìn mới và xây dựng thói quen sáng tạo hằng ngày.</p>
+        <a class="back-link" href="#books">← Quay lại danh sách sách</a>
+      </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span>Góc sách · Bài thực hành HTML5 / CSS3</span><span>Tham khảo khảo sát <a href="https://www.fahasa.com/">Fahasa</a> · Thiết kế minh họa độc lập</span></div></footer>
+</body>
+</html>
