@@ -2,7 +2,9 @@
 
 **Dự án:** Góc sách – Cải tiến giao diện thẻ sản phẩm sách  
 **Môn học:** Phát triển ứng dụng WEB/TMĐT  
-**Giảng viên:** TS Nguyễn Mạnh Tuấn – tuannm@ueh.edu.vn
+**Giảng viên:** TS Nguyễn Mạnh Tuấn – tuannm@ueh.edu.vn  
+**Mã nguồn:** [ecommerce-ui-improvement](https://github.com/huytran31241023748-code/ecommerce-ui-improvement)  
+**Website:** [Góc sách trên GitHub Pages](https://huytran31241023748-code.github.io/ecommerce-ui-improvement/)
 
 ## 1. Giới thiệu
 
@@ -145,7 +147,7 @@ Mỗi liên kết có nhãn hỗ trợ phân biệt sách, chẳng hạn **Xem c
 
 - **HTML5:** Cấu trúc nội dung bằng các thẻ ngữ nghĩa `header`, `main`, `section`, `article`; khai báo tiếng Việt, UTF-8 và viewport.
 - **CSS3:** Định dạng giao diện trong tệp riêng; dùng CSS Grid, Flexbox, biến CSS và Media Queries.
-- **SVG:** Bốn bìa sách vector tự thiết kế, lưu cục bộ trong `images/` và hiển thị bằng thẻ `img`.
+- **Ảnh JPG:** Bốn bìa sách tự thiết kế, lưu cục bộ trong `images/` và hiển thị bằng thẻ `img`.
 - Không sử dụng JavaScript, framework, thư viện CSS, backend hoặc cơ sở dữ liệu.
 
 ### Cấu trúc thư mục
@@ -156,10 +158,10 @@ ecommerce-ui-improvement/
 ├── css/
 │   └── style.css
 ├── images/
-│   ├── mien-yen.svg
-│   ├── khu-vuon.svg
-│   ├── vi-sao.svg
-│   └── sang-tao.svg
+│   ├── mien-yen.jpg
+│   ├── khu-vuon.jpg
+│   ├── vi-sao.jpg
+│   └── sang-tao.jpg
 ├── README.md
 └── AI_USAGE.md
 ```
@@ -208,6 +210,12 @@ CSS được chia theo thứ tự: biến dùng chung và quy tắc cơ bản; p
 
 ## 5. Cách chạy
 
+### 5.1. Truy cập website trực tuyến
+
+Mở [Góc sách trên GitHub Pages](https://huytran31241023748-code.github.io/ecommerce-ui-improvement/) bằng trình duyệt máy tính hoặc điện thoại. Trang được triển khai từ nhánh `main`, thư mục gốc của repository.
+
+### 5.2. Chạy bằng tệp trên máy tính
+
 1. Tải mã nguồn hoặc tạo thư mục theo cấu trúc trên.
 2. Đặt `index.html` ở thư mục gốc, CSS trong `css/` và ảnh trong `images/`.
 3. Kiểm tra trong phần `head` của `index.html` có liên kết:
@@ -223,7 +231,7 @@ Nội dung chính dùng tài nguyên cục bộ, không cần cài server hoặc
 
 **Nếu mất định dạng:** Kiểm tra tên và vị trí `css/style.css`. Đường dẫn stylesheet trong HTML phải là `css/style.css`.
 
-**Nếu mất ảnh:** Kiểm tra tên tệp và đường dẫn dạng `images/mien-yen.svg`. Giữ đúng chữ hoa/chữ thường để tránh lỗi khi đưa lên hosting.
+**Nếu mất ảnh:** Kiểm tra tên tệp và đường dẫn dạng `images/mien-yen.jpg`. Giữ đúng chữ hoa/chữ thường để tránh lỗi khi đưa lên hosting.
 
 ### Thao tác kiểm tra sau khi mở trang
 
@@ -348,7 +356,24 @@ Kết quả kiểm tra có hỗ trợ AI trên bản giao diện cục bộ:
 | Điều hướng | Liên kết chi tiết sách Miền yên và liên kết quay lại hoạt động. |
 | Bàn phím | Tab chuyển đến liên kết sách tiếp theo và có viền focus. |
 
-**Môi trường kiểm tra:** Trình duyệt với các kích thước khung nhìn nêu trên. Chưa kiểm tra trên điện thoại vật lý, trình đọc màn hình hoặc ở mức phóng to 200%.
+**Môi trường kiểm tra của AI:** Trình duyệt với các kích thước khung nhìn nêu trên.
+
+### Kết quả tự kiểm tra sau triển khai
+
+Sau khi triển khai GitHub Pages, sinh viên đã kiểm tra và xác nhận các nội dung hiển thị, bố cục và điều hướng hoạt động đúng.
+
+| Nội dung tự kiểm tra | Kết quả xác nhận |
+| --- | --- |
+| Truy cập website | Mở được trang qua đường dẫn GitHub Pages. |
+| Danh sách sách | Hiển thị đủ bốn sản phẩm, có hình ảnh, tên, giá và liên kết thao tác. |
+| Tên sách | Tên dài đọc đầy đủ, không che giá hoặc liên kết. |
+| Giá và nhãn giảm | Giá bán, giá gốc và mức giảm thể hiện đúng dữ liệu mẫu. |
+| Hình ảnh JPG | Bốn ảnh hiển thị đúng, đường dẫn khớp HTML. |
+| Máy tính và giao diện điện thoại | Bố cục điều chỉnh theo chiều rộng, không tràn ngang. |
+| Điều hướng | Xem chi tiết đến đúng sách và quay lại danh sách được. |
+| Tài nguyên triển khai | CSS và ảnh tải đúng trên website trực tuyến. |
+
+Phần xác nhận này được cập nhật theo kết quả sinh viên cung cấp sau khi tự kiểm tra. Kiểm tra trình đọc màn hình và mức phóng to 200% được để ở kế hoạch bổ sung.
 
 ### Đối chiếu yêu cầu bài tập
 
@@ -377,14 +402,16 @@ AI hỗ trợ:
 
 - Tổng hợp khảo sát năm khu vực từ ảnh và phiên truy cập, phân biệt quan sát với suy luận.
 - Đề xuất phương án thẻ dọc và giải thích cách tổ chức thông tin.
-- Tạo HTML/CSS, bìa SVG và dữ liệu sách mẫu.
+- Tạo HTML/CSS, bìa JPG và dữ liệu sách mẫu.
 - Kiểm tra bản giao diện như mô tả ở mục 6.
 - Phát hiện và sửa lệch giá ở thẻ không giảm giá bằng cách điều chỉnh Flexbox trong vùng giá/thao tác.
 - Soạn hướng dẫn và tài liệu dự án.
 
-**Phần thực hiện cá nhân:** Lựa chọn Fahasa, cung cấp ảnh khảo sát, lựa chọn phương án thẻ dọc và tạo repository `ecommerce-ui-improvement`.
+**Phần thực hiện cá nhân:** Lựa chọn Fahasa, cung cấp ảnh khảo sát, duyệt phương án thẻ dọc, tạo repository, tổ chức tệp, lựa chọn ảnh JPG và triển khai GitHub Pages.
 
-**Kết quả tự kiểm tra và chỉnh sửa cá nhân:** Chưa cập nhật.
+**Kết quả tự kiểm tra:** Đã kiểm tra bản trực tuyến và xác nhận nội dung, ảnh, bố cục và điều hướng đúng như bảng kết quả ở mục 6.
+
+**Điều chỉnh theo lựa chọn cá nhân:** Chuyển bốn bìa từ SVG sang JPG, cập nhật đường dẫn ảnh sang `.jpg` và sử dụng cấu trúc `css/style.css`. AI hỗ trợ chuyển đổi ảnh và cập nhật bản mã; sinh viên thực hiện các bước đưa tệp lên repository và kiểm tra kết quả triển khai.
 
 Chi tiết prompt và quá trình sử dụng AI: [AI_USAGE.md](AI_USAGE.md).
 
@@ -395,24 +422,24 @@ Chi tiết prompt và quá trình sử dụng AI: [AI_USAGE.md](AI_USAGE.md).
 | Chọn đối tượng khảo sát | Gợi ý website và phạm vi phù hợp. | Chọn Fahasa. |
 | Thu thập và phân tích | Tổng hợp nội dung, phân biệt nhận xét và đề xuất. | Cung cấp ảnh chụp để làm căn cứ khảo sát. |
 | Chọn phương án | So sánh thẻ dọc và thẻ ngang, giải thích bố cục. | Duyệt phương án A. |
-| Xây dựng | Tạo HTML/CSS, bìa và dữ liệu sách mẫu. | Kết quả tự chỉnh sửa mã chưa cập nhật. |
-| Kiểm tra | Kiểm tra bố cục, ảnh, liên kết và tiêu điểm như mục 6. | Kết quả tự kiểm tra chưa cập nhật. |
-| Quản lý bài | Hỗ trợ hướng dẫn cấu trúc và tài liệu. | Tạo repository `ecommerce-ui-improvement`. |
+| Xây dựng | Tạo HTML/CSS, bìa và dữ liệu sách mẫu; hỗ trợ đổi ảnh sang JPG. | Chọn định dạng JPG, tổ chức và đưa tệp lên repository. |
+| Kiểm tra | Kiểm tra bản cục bộ như mục 6. | Kiểm tra bản GitHub Pages, xác nhận nội dung và giao diện đúng. |
+| Quản lý bài | Hướng dẫn cấu trúc, tài liệu và cấu hình Pages. | Tạo repository Public và triển khai GitHub Pages. |
 
 Quá trình sử dụng AI được ghi theo từng giai đoạn để có thể đối chiếu nguồn đề xuất, quyết định thiết kế và kết quả thực hiện.
 
 ## 8. Danh sách kiểm tra
 
-- [ ] Repository ở chế độ Public và có đầy đủ mã nguồn.
-- [ ] `index.html` nằm ở thư mục gốc; liên kết CSS khớp cấu trúc thực tế.
-- [ ] Có đủ bốn ảnh trong `images/`.
-- [ ] Tự mở trang, kiểm tra tên sách, giá và liên kết chi tiết.
-- [ ] Tự kiểm tra ở 1366px, 768px và 375–390px.
-- [ ] Kiểm tra không tràn ngang; ảnh không méo; tên dài không mất thông tin.
-- [ ] Dùng Tab và Enter để kiểm tra liên kết, viền focus.
-- [ ] Tự phát hiện, sửa ít nhất một điểm và ghi lại trước/sau.
-- [ ] Giải thích được đoạn HTML/CSS đã sửa.
-- [ ] Cập nhật phần tự kiểm tra trong README và nhật ký AI.
+- [x] Repository ở chế độ Public.
+- [x] Có `index.html`, CSS, ảnh, README và nhật ký AI.
+- [x] Đường dẫn CSS và ảnh JPG khớp với HTML.
+- [x] Trang hiển thị đủ bốn sản phẩm, tên, giá và liên kết thao tác.
+- [x] Đã triển khai website bằng GitHub Pages.
+- [x] Đã tự kiểm tra nội dung, hình ảnh và bố cục máy tính/điện thoại.
+- [x] Đã kiểm tra Xem chi tiết và Quay lại danh sách.
+- [x] Đã cập nhật tài liệu theo định dạng ảnh JPG.
+- [ ] Bổ sung minh chứng một điểm do bản thân phát hiện và trực tiếp sửa HTML/CSS.
+- [ ] Bổ sung phần giải thích cá nhân về đoạn mã đã trực tiếp sửa.
 
 ### Kịch bản kiểm tra bổ sung
 
