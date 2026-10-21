@@ -212,7 +212,7 @@ Mô tả được đặt ở phần chi tiết phía dưới. Cách tách này g
 | Giá bán | Chữ đậm 24px, màu đỏ sẫm. |
 | Giá gốc | Phần tử `del`, cỡ chữ nhỏ hơn và màu phụ. |
 | Nhãn giảm | Đặt cạnh giá gốc; số liệu khớp giá mẫu. |
-| Thao tác | Một liên kết Xem chi tiết; chiều cao tối thiểu 46px. |
+| Thao tác | Một liên kết Xem chi tiết; cấu hình ban đầu cao tối thiểu 46px. |
 | Phần chi tiết | Có ID riêng, tiêu đề sách, tác giả, thể loại và giới thiệu. |
 | Trạng thái chọn | Hover, focus-visible và đường viền phần đích bằng `:target`. |
 
@@ -248,7 +248,7 @@ Các kết quả dưới đây là của bản gốc do AI xây dựng, được
 | Màn hình 768px | 2 cột. |
 | Màn hình 390px, 375px, 320px | 1 cột, không tràn ngang tại các mốc đã kiểm tra. |
 | Hình ảnh | Bốn bìa tải thành công. |
-| Liên kết thao tác | Chiều cao tối thiểu 46px tại các mốc đã thử. |
+| Liên kết thao tác trước tinh chỉnh bổ sung | Chiều cao tối thiểu 46px tại các mốc đã thử. |
 | Liên kết chi tiết | Đã xác nhận liên kết sách Miền yên đến đúng phần chi tiết và quay lại danh sách. |
 | Bàn phím | Đã dùng Tab; tiêu điểm chuyển đến liên kết tiếp theo và có viền rõ. |
 
@@ -300,10 +300,12 @@ Bản giao diện đầu tiên đặt `style.css` cạnh `index.html`. Cấu tr�
 
 ### 5.2. Phần lựa chọn và bổ sung cá nhân
 
-- Chọn website Fahasa.
-- Cung cấp ảnh chụp phục vụ khảo sát.
-- Chọn và duyệt phương án A.
-- Chọn thực hiện theo cấu trúc dự án có `css/style.css`, `images/`, README và nhật ký AI.
+- Chọn website Fahasa và cung cấp ảnh chụp phục vụ khảo sát.
+- Lựa chọn phương án A – thẻ sách dọc dạng lưới.
+- Tạo repository Public `ecommerce-ui-improvement`.
+- Tổ chức các tệp theo cấu trúc `index.html`, `css/style.css`, `images/`, README và nhật ký AI.
+- Chọn chuyển ảnh từ SVG sang JPG, đưa ảnh mới lên và quản lý các tệp ảnh cũ.
+- Triển khai GitHub Pages và kiểm tra nội dung, bố cục, hình ảnh, liên kết trên bản trực tuyến.
 
 ### 5.3. Kết quả tự kiểm tra và chỉnh sửa cá nhân
 
@@ -320,20 +322,52 @@ Sau khi triển khai, sinh viên xác nhận đã kiểm tra và các nội dung
 
 **Điều chỉnh theo lựa chọn cá nhân:** Chọn chuyển bìa SVG sang JPG và cập nhật đường dẫn ảnh, tổ chức CSS trong thư mục `css`. AI hỗ trợ chuyển đổi ảnh và bản mã; sinh viên thực hiện các bước quản lý tệp và kiểm tra bản triển khai.
 
-Việc tự kiểm tra đã được xác nhận. Minh chứng về một lỗi do bản thân phát hiện và trực tiếp sửa HTML/CSS được ghi riêng khi có nội dung cụ thể.
+Việc tự kiểm tra bản trực tuyến đã được xác nhận. Các thay đổi tài nguyên và đường dẫn được ghi nhận riêng với lỗi căn giá do AI phát hiện, sửa trong quá trình xây dựng.
 
 ### 5.4. Tổng hợp phạm vi kiểm tra
 
 | Tình huống | Mục tiêu đối chiếu | Trạng thái |
 | --- | --- | --- |
 | Điều hướng chi tiết và quay lại | Đối chiếu phần sách được mở. | Sinh viên xác nhận hoạt động đúng. |
-| Mở `index.html` trực tiếp trên máy cá nhân | Kiểm tra đường dẫn CSS/ảnh trong cấu trúc tự tạo. | Chưa cập nhật. |
+| Mở `index.html` trực tiếp trên máy cá nhân | Kiểm tra đường dẫn CSS/ảnh trong cấu trúc tự tạo. | Ngoài phần tự kiểm tra trực tuyến đã xác nhận. |
 | Xem bản trên GitHub Pages | Kiểm tra ảnh, CSS, bố cục và điều hướng sau triển khai. | Sinh viên xác nhận hoạt động đúng. |
 | Phóng to 200% | Xác định chữ và thao tác có bị che hoặc tràn. | Chưa kiểm tra. |
 | Thêm sách thứ năm, giá dài hoặc ảnh khác tỷ lệ | Đánh giá khả năng dùng lại mẫu thẻ với dữ liệu mới. | Chưa kiểm tra. |
 | Giao diện điện thoại | Đánh giá tên, ảnh, giá, bố cục và liên kết ở màn hình nhỏ. | Sinh viên xác nhận giao diện đúng; không ghi riêng thiết bị cụ thể. |
 
 Bảng phân biệt các kết quả đã xác nhận với những tình huống mở rộng chưa thực hiện.
+
+### 5.5. Tinh chỉnh bổ sung cho liên kết trên điện thoại
+
+Sau lượt kiểm tra ban đầu, AI đề xuất tăng kích thước liên kết **Xem chi tiết** ở màn hình dưới 600px. Thay đổi nhằm tăng khả năng đọc và vùng chạm, giữ cấu hình chung trên màn hình lớn.
+
+| Thuộc tính | Trước tinh chỉnh | Cấu hình bổ sung |
+| --- | --- | --- |
+| `min-height` | `46px` | `52px` |
+| `font-size` | `14px` | `16px` |
+| `padding` | `10px 14px` | `12px 16px` |
+| Phạm vi | Quy tắc chung | Media Query `max-width: 599px` |
+
+```css
+@media (max-width: 599px) {
+  .book-card__link {
+    min-height: 52px;
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+}
+```
+
+**Phân chia phần việc:** AI đề xuất, giải thích và bổ sung đoạn mã vào bản CSS cung cấp. Việc áp dụng trên repository và kiểm tra lại sau triển khai chưa được xác nhận trong nhật ký. Tinh chỉnh được ghi là phần bổ sung, không thay thế các cải tiến tên sách, giá, hình ảnh và bố cục đã hoàn thành.
+
+| Nội dung cần kiểm tra sau khi áp dụng | Kết quả mong đợi |
+| --- | --- |
+| Khung nhìn 375–390px | Liên kết cao tối thiểu 52px, chữ 16px, không che hoặc tràn nội dung. |
+| Khung nhìn 768px và 1366px | Giữ cấu hình chung của liên kết. |
+| Xem chi tiết và quay lại | Điều hướng vẫn đúng sau khi đổi định dạng. |
+| Bàn phím | Có viền focus và kích hoạt bằng Enter. |
+
+Các kết quả kiểm tra trước tinh chỉnh vẫn được giữ tại mục 5.1 và 5.3; bảng trên là tiêu chí đối chiếu của phiên bản bổ sung.
 
 ## 6. Phần tôi hiểu và có thể giải thích
 
@@ -352,7 +386,7 @@ Các thành phần mã nguồn trọng tâm:
 - `:hover` và `:focus-visible` phản hồi thao tác chuột, bàn phím.
 - Biến CSS trong `:root` giúp thay đổi màu và khoảng cách dùng chung.
 
-**Phần giải thích mã nguồn:** Các nội dung kỹ thuật được trình bày ở mục 6.1–6.6. Minh chứng giải thích đoạn mã do cá nhân trực tiếp sửa chưa được bổ sung.
+**Nội dung giải thích mã nguồn:** Các mục 6.1–6.7 trình bày cấu trúc và vai trò của các thành phần HTML/CSS trong dự án.
 
 ### 6.1. Cấu trúc trang và liên kết nội bộ
 
@@ -395,4 +429,26 @@ Media Queries đổi số cột khi chiều rộng xuống dưới 1100px và 60
 | Khoảng cách | Biến `--gap`, padding và margin. | Thẻ cân đối ở cả ba bố cục. |
 | Số sản phẩm | Thêm cùng mẫu article trong danh sách và chi tiết. | ID duy nhất, liên kết đúng và lưới xuống hàng. |
 
-Các giải thích trên mô tả mã nguồn của dự án; phần tự diễn giải và minh chứng chỉnh sửa cá nhân được ghi riêng sau khi thực hiện.
+### 6.7. Giải thích quy tắc tinh chỉnh liên kết trên điện thoại
+
+- `@media (max-width: 599px)`: giới hạn quy tắc ở màn hình có chiều rộng tối đa 599px.
+- `.book-card__link`: chọn các liên kết thao tác chính trong thẻ sách.
+- `min-height: 52px`: đặt chiều cao tối thiểu, cho phép liên kết giãn thêm khi cần.
+- `font-size: 16px`: tăng cỡ chữ so với cấu hình chung 14px.
+- `padding: 12px 16px`: tạo khoảng đệm trên/dưới 12px và trái/phải 16px.
+
+Quy tắc nằm sau CSS chung nên ghi đè các thuộc tính tương ứng khi điều kiện màn hình thỏa mãn. Ngoài phạm vi này, trình duyệt tiếp tục dùng cấu hình chung. Đây là thay đổi cách trình bày, không đổi nội dung, đích liên kết hoặc thêm chức năng xử lý mua hàng.
+
+### Tổng hợp trách nhiệm thực hiện
+
+| Nội dung | AI hỗ trợ | Phần cá nhân |
+| --- | --- | --- |
+| Khảo sát | Phân tích ảnh và các trang có thể truy cập. | Chọn Fahasa, cung cấp ảnh và lựa chọn phạm vi cải tiến. |
+| Thiết kế | So sánh phương án, giải thích thứ bậc và responsive. | Duyệt phương án A. |
+| Mã nguồn | Tạo HTML/CSS và sửa lỗi căn giá đã ghi nhận. | Tổ chức, đưa các tệp vào repository. |
+| Ảnh | Vẽ bìa, chuyển JPG, cập nhật bản mã. | Chọn định dạng JPG, quản lý ảnh trên GitHub. |
+| Triển khai | Hướng dẫn cấu hình GitHub Pages. | Thiết lập Pages, mở và kiểm tra website. |
+| Tinh chỉnh điện thoại | Chuẩn bị quy tắc nút 52px, chữ 16px. | Kết quả áp dụng và kiểm tra bổ sung chưa được xác nhận. |
+| Tài liệu | Hỗ trợ trình bày README và AI_USAGE. | Cung cấp báo cáo, góp ý nội dung và xác nhận kết quả tự kiểm tra. |
+
+Các phần đã kiểm tra, thay đổi có hỗ trợ và đề xuất bổ sung được ghi tách biệt để đối chiếu với quá trình thực hiện.
