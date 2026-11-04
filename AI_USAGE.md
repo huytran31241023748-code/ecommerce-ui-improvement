@@ -452,3 +452,219 @@ Quy tắc nằm sau CSS chung nên ghi đè các thuộc tính tương ứng khi
 | Tài liệu | Hỗ trợ trình bày README và AI_USAGE. | Cung cấp báo cáo, góp ý nội dung và xác nhận kết quả tự kiểm tra. |
 
 Các phần đã kiểm tra, thay đổi có hỗ trợ và đề xuất bổ sung được ghi tách biệt để đối chiếu với quá trình thực hiện.
+## Nhật ký sử dụng AI – Buổi 2
+
+Đề tài: THIẾT KẾ WEBSITE BÁN SÁCH GÓC SÁCH.
+
+Công cụ sử dụng: Codex.
+
+Nội dung dưới đây trình bày gọn chín prompt theo tài liệu bài tập, được điều chỉnh theo bối cảnh Góc sách. Các khối mã nguồn đã cung cấp trong phiên làm việc được lược khỏi bản trình bày; mỗi prompt kèm kết quả sơ bộ tương ứng.
+
+### Prompt 1. Phân tích mã nguồn hiện tại
+
+```text
+Tôi đang làm bài tập cá nhân môn Phát triển ứng dụng thương mại điện tử.
+Trong Buổi 1, tôi đã khảo sát Fahasa và xây dựng giao diện Góc sách bằng HTML/CSS.
+Mã index.html và css/style.css của Buổi 1 đã được cung cấp trong quá trình làm bài.
+
+Hãy giúp tôi:
+1. Xác định những thành phần HTML đã có.
+2. Chỉ ra các thành phần còn thiếu hoặc chưa hợp lý.
+3. Nêu ba vấn đề về cấu trúc HTML hoặc trình bày.
+4. Đề xuất cách cải thiện bằng HTML5/CSS3 cơ bản.
+5. Giải thích thứ tự thực hiện các cải tiến.
+
+Chưa viết lại toàn bộ mã nguồn. Không tạo website mới.
+Hãy giúp tôi hiểu mã hiện tại trước khi sửa.
+```
+
+Kết quả sơ bộ:
+
+- Xác định phạm vi tiếp tục cải thiện là danh sách sách, điều hướng và thông tin chi tiết.
+- Ghi nhận menu điều hướng còn thiếu, nội dung chi tiết cần tổ chức rõ hơn và ảnh bìa còn sơ lược; lập hướng cải thiện cho Buổi 2.
+
+### Prompt 2. Kiểm tra cấu trúc HTML5
+
+```text
+Tôi đang học HTML5 và muốn cải thiện cấu trúc website Góc sách từ Buổi 1.
+Mã HTML hiện tại đã được cung cấp.
+
+Hãy hướng dẫn tôi:
+1. Xác định các phần tử HTML đang sử dụng.
+2. Kiểm tra header, nav, main, section, article và footer.
+3. Kiểm tra thứ bậc tiêu đề h1, h2, h3.
+4. Kiểm tra img, alt và a.
+5. Phát hiện thẻ chưa đóng hoặc lồng nhau chưa hợp lý.
+6. Đề xuất cách sửa phù hợp với nội dung hiện tại.
+
+Phân biệt lỗi cần sửa và đề xuất cải thiện.
+Không thêm phần tử chỉ để làm mã dài hơn. Không viết lại toàn bộ website.
+Giải thích lý do của từng thay đổi.
+```
+
+Kết quả sơ bộ:
+
+- Bổ sung và củng cố các khu vực HTML có ngữ nghĩa; hoàn thiện menu, nhóm chủ đề, thông tin sách, hướng dẫn và hỏi đáp.
+- Đối chiếu tiêu đề, alt, ID và đích liên kết, tiếp tục sử dụng bốn sách hiện có.
+
+### Prompt 3. Tạo CSS cơ bản
+
+```text
+Tôi có website HTML5 Góc sách kế thừa Buổi 1.
+Cấu trúc dự án gồm index.html, css/style.css và thư mục images chứa bốn ảnh JPG.
+Phần head và các khu vực HTML cần định dạng đã được cung cấp.
+
+Hãy hướng dẫn tôi:
+1. Tạo hoặc cập nhật và liên kết css/style.css.
+2. Định dạng font chữ, màu chữ và màu nền.
+3. Thiết lập margin và các quy tắc cơ bản cho body.
+4. Đảm bảo hình ảnh không vượt chiều rộng phần tử chứa.
+5. Kiểm tra đường dẫn CSS.
+
+Chỉ tạo CSS cần thiết, không dùng Bootstrap hoặc Tailwind CSS.
+Giải thích từng nhóm thuộc tính và cách kiểm tra bằng trình duyệt.
+```
+
+Kết quả sơ bộ:
+
+- Cập nhật tệp CSS riêng, giữ liên kết css/style.css và đường dẫn ảnh trong images/.
+- Định dạng thống nhất font, màu sắc, khoảng cách và các khu vực nội dung đã bổ sung.
+
+### Prompt 4. Thực hành selector và Box Model
+
+```text
+Tôi muốn thực hành CSS selector và Box Model trên thẻ sách của website Góc sách.
+HTML của article.book-card đã được cung cấp, gồm ảnh bìa, thể loại, tên, tác giả, mô tả, giá và liên kết xem chi tiết.
+
+Hãy hướng dẫn tôi:
+1. Sử dụng element selector và class selector.
+2. Sử dụng descendant selector khi phù hợp.
+3. Điều chỉnh margin, padding và border.
+4. Sử dụng border-radius để bo góc.
+5. Định dạng tên và giá sách.
+6. Định dạng liên kết thành nút thao tác đơn giản.
+
+Giải thích margin khác padding và tác dụng của box-sizing: border-box.
+Chỉ đưa ra CSS cần thiết, không thay đổi nội dung hoặc tạo lại toàn bộ HTML.
+```
+
+Kết quả sơ bộ:
+
+- Thực hành selector và các thuộc tính khoảng cách, đường viền, góc bo trên thẻ sách.
+- Sau khi so sánh các phương án, giao diện được chuyển sang thẻ ngang với ảnh bên trái, thông tin bên phải và đường viền nhấn.
+
+### Prompt 5. Thực hành Flexbox
+
+```text
+Tôi đang học CSS3 và muốn thực hành Flexbox trên menu chính của website Góc sách.
+HTML đã cung cấp gồm ul.site-nav__list chứa năm li và các liên kết điều hướng.
+
+Hãy hướng dẫn tôi:
+1. Xác định phần tử cha cần đặt display: flex.
+2. Căn chỉnh bằng justify-content.
+3. Căn chỉnh theo trục còn lại bằng align-items.
+4. Tạo khoảng cách bằng gap.
+5. So sánh kết quả khi thay đổi justify-content.
+
+Đưa ra đoạn CSS ngắn phù hợp với HTML, giải thích thuộc tính và kết quả mong đợi.
+Không sử dụng framework, không viết lại toàn bộ giao diện.
+```
+
+Kết quả sơ bộ:
+
+- Menu sử dụng Flexbox theo hàng, justify-content: space-between, align-items: center và gap: 12px trên máy tính.
+- Đã thực hành thay đổi giá trị trong DevTools và quan sát vị trí các mục menu.
+
+### Prompt 6. Thực hành CSS Grid
+
+```text
+Tôi đã có danh sách bốn sách trong div.book-grid; mỗi sách là một article.book-card.
+Mã HTML của danh sách đã được cung cấp.
+
+Hãy hướng dẫn sử dụng CSS Grid để:
+1. Bố trí danh sách thành hai cột.
+2. Điều chỉnh khoảng cách giữa các sản phẩm.
+3. Giữ hình ảnh đúng tỷ lệ.
+4. Thay đổi số cột và quan sát kết quả.
+5. Giải thích grid-template-columns, repeat và gap.
+6. Giải thích object-fit: cover.
+
+Chỉ viết CSS cần thiết cho danh sách hiện có.
+Không sử dụng Bootstrap hoặc Tailwind CSS.
+Giải thích cách kiểm tra trên trình duyệt.
+```
+
+Kết quả sơ bộ:
+
+- Hoàn thiện lưới hai cột từ 1200px và một cột khi màn hình nhỏ hơn; gap máy tính là 28px giữa hàng và 24px giữa cột.
+- Giữ bìa sách bằng object-fit: contain và tỷ lệ 5:7; thực hành đổi một/hai cột và các giá trị gap.
+
+### Prompt 7. Bổ sung hiệu ứng CSS
+
+```text
+Tôi muốn bổ sung hover và focus cho liên kết Xem chi tiết có class book-card__link trên website Góc sách.
+HTML và CSS liên quan đã được cung cấp.
+
+Hãy hướng dẫn tôi:
+1. Tạo hover nhẹ.
+2. Dùng transition để chuyển đổi mượt.
+3. Bổ sung focus-visible để hỗ trợ bàn phím.
+4. Đảm bảo màu chữ và nền dễ nhìn.
+5. Không làm thay đổi bố cục quá nhiều.
+
+Chỉ đưa ra CSS cần thêm hoặc sửa.
+Giải thích từng thuộc tính và cách kiểm tra.
+```
+
+Kết quả sơ bộ:
+
+- Liên kết có hover đổi nền, bóng nhẹ, dịch chuyển lên 2px và transition 0,2 giây.
+- Bổ sung viền focus-visible màu xanh; trạng thái hover và focus được kiểm tra bằng chuột và bàn phím.
+
+### Prompt 8. Nhờ AI hỗ trợ kiểm tra lỗi
+
+```text
+Tôi đã hoàn thành giao diện Góc sách bằng HTML5/CSS3 và đã cung cấp mã liên quan.
+Ở chiều rộng 390px, ảnh bìa nằm phía trên cột ảnh và để lại khoảng trống lớn phía dưới.
+
+Hãy giúp tôi:
+1. Xác định nguyên nhân có thể gây ra vấn đề.
+2. Chỉ ra thuộc tính hoặc phần tử cần kiểm tra.
+3. Đề xuất cách sửa ít thay đổi nhất.
+4. Giải thích vì sao cách sửa giải quyết được vấn đề.
+5. Đề xuất cách kiểm tra sau sửa.
+
+Không viết lại toàn bộ mã nguồn.
+Phân biệt nguyên nhân đã xác định và giả thuyết cần kiểm tra.
+```
+
+Kết quả sơ bộ:
+
+- Xác định khung ảnh dùng Flexbox theo hàng với align-items: flex-start; đề xuất đổi thành center trên điện thoại.
+- Người thực hiện trực tiếp chỉnh CSS và xác nhận ảnh đã nằm giữa trên trình duyệt cá nhân.
+- Các kiểm tra ở 1366px, 768px và 390px ghi nhận ảnh tải đủ, liên kết hoạt động, hover/focus có phản hồi và không tràn ngang nghiêm trọng.
+
+### Prompt 9. Kiểm tra README
+
+```text
+Tôi đang hoàn thiện README.md cho bài tập cá nhân Buổi 2 môn Phát triển ứng dụng TMĐT.
+Dự án Góc sách tiếp tục phát triển từ Buổi 1, đã thực hành HTML5, selector, Box Model, Flexbox và CSS Grid.
+
+Hãy đề xuất cấu trúc README gồm:
+1. Giới thiệu bài tập.
+2. Website tham khảo và khu vực cải tiến.
+3. Những kỹ thuật HTML5/CSS3 đã thực hành.
+4. Hướng dẫn chạy website.
+5. Những thay đổi đã thực hiện.
+6. Công cụ AI và cách kiểm tra kết quả.
+7. Đường dẫn repository và website đã triển khai.
+
+Không tự bịa thông tin; để trống thông tin chưa được cung cấp.
+Giữ nội dung Buổi 1, bổ sung cập nhật Buổi 2 ở cuối README.
+Prompt và nhật ký AI để riêng trong AI_USAGE.md; README chỉ dẫn liên kết.
+```
+
+Kết quả sơ bộ:
+
+- Đã soạn phần bổ sung README cho Buổi 2, giữ nội dung Buổi 1 và ghi rõ cấu hình thẻ ngang hiện tại.
+- Chuẩn bị nội dung về kỹ thuật, thay đổi, kiểm tra và liên kết sản phẩm; nhật ký AI được tách thành tệp riêng.
