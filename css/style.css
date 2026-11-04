@@ -980,7 +980,7 @@ h1 span {
 
   .book-card__image {
     min-height: 0;
-    align-items: flex-start;
+    align-items: center;
     padding: 20px 10px;
   }
 
