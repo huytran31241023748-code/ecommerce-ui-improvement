@@ -1101,3 +1101,37 @@ h1 span {
     font-size: 13px;
   }
 }
+/* 14. Hoàn thiện danh sách sách bằng CSS Grid */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 24px;
+  align-items: stretch;
+}
+
+.book-grid > .book-card {
+  min-width: 0;
+}
+
+/* Bìa sách: tỷ lệ 5:7, giữ đầy đủ nội dung ảnh. */
+.book-card__image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 7;
+  object-fit: contain;
+}
+
+/* Thẻ ngang cần đủ chiều rộng cho thông tin và vùng giá. */
+@media (max-width: 1199.98px) {
+  .book-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 599.98px) {
+  .book-grid {
+    gap: 18px;
+  }
+}
