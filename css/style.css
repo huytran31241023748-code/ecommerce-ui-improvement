@@ -1168,7 +1168,12 @@ h1 span {
   .book-card .book-card__link {
     transition: none;
   }
-
+/* 16. Căn giữa ảnh bìa trên điện thoại */
+@media (max-width: 599.98px) {
+  .book-card .book-card__image {
+    align-items: center;
+  }
+}
   .book-card .book-card__link:hover {
     transform: none;
   }
