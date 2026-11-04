@@ -1135,3 +1135,41 @@ h1 span {
     gap: 18px;
   }
 }
+/* 15. Phản hồi hover và focus cho liên kết xem chi tiết */
+.book-card .book-card__link {
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.book-card .book-card__link:hover {
+  background-color: #711e2d;
+  color: #ffffff;
+  box-shadow: 0 6px 14px #711e2d33;
+  transform: translateY(-2px);
+}
+
+.book-card .book-card__link:focus-visible {
+  outline: 3px solid #175b99;
+  outline-offset: 4px;
+  background-color: #711e2d;
+  color: #ffffff;
+}
+
+.book-card .book-card__link:active {
+  background-color: #541320;
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+/* Giữ phản hồi màu sắc khi chọn giảm chuyển động. */
+@media (prefers-reduced-motion: reduce) {
+  .book-card .book-card__link {
+    transition: none;
+  }
+
+  .book-card .book-card__link:hover {
+    transform: none;
+  }
+}
