@@ -521,3 +521,157 @@ Các kịch bản bổ sung là kế hoạch kiểm tra, không được tính l
 - [Danh mục sách trong nước](https://www.fahasa.com/sach-trong-nuoc.html).
 - Báo cáo cá nhân **NHIỆM VỤ 1 – KHẢO SÁT WEBSITE FAHASA**.
 - Đề bài **Bài tập cá nhân Chương 1**, môn Phát triển ứng dụng WEB/TMĐT.
+---
+
+## 10. Cập nhật Buổi 2 – THIẾT KẾ WEBSITE BÁN SÁCH GÓC SÁCH
+
+Các mục 1–9 phía trên lưu lại nội dung khảo sát, thiết kế và kết quả của Buổi 1. Phần này ghi nhận những nội dung được kế thừa, bổ sung và điều chỉnh trong Buổi 2.
+
+Phiên bản hiện tại sử dụng thẻ sách nằm ngang và danh sách hai cột trên màn hình rộng. Khi đối chiếu giao diện đang triển khai, sử dụng cấu hình Buổi 2 trình bày dưới đây; bố cục thẻ dọc và lưới 4–2–1 ở phần trước là cấu hình của Buổi 1.
+
+### 10.1. Kế thừa sản phẩm Buổi 1
+
+Dự án tiếp tục sử dụng repository `ecommerce-ui-improvement`, cấu trúc tệp HTML/CSS và bốn ảnh JPG đã có. Nội dung khảo sát Fahasa, mục tiêu hiển thị đầy đủ tên sách, phân biệt các mức giá và điều hướng đến thông tin chi tiết tiếp tục được kế thừa.
+
+Bốn sách vẫn được giữ trong danh sách:
+
+- Miền yên.
+- Khu vườn nhỏ giữa những ngày bận rộn.
+- Đi qua những vì sao — Hành trình khám phá bầu trời đêm.
+- Sổ tay sáng tạo mỗi ngày.
+
+Buổi 2 tập trung hoàn thiện cấu trúc và cách trình bày trên nền sản phẩm này, không tạo một dự án tách biệt.
+
+### 10.2. Củng cố cấu trúc HTML5
+
+Các khu vực được rà soát và tổ chức bằng phần tử HTML phù hợp:
+
+- `header` chứa thương hiệu và nội dung đầu trang.
+- `nav` xác định menu chính, nhóm chủ đề đọc và liên kết cuối trang.
+- `main` bao quanh nội dung chính.
+- `section` phân chia phần giới thiệu, chủ đề đọc, danh sách sách, thông tin sách và hướng dẫn.
+- `article` tổ chức từng thẻ sách và phần giới thiệu chi tiết.
+- `footer` chứa thông tin và điều hướng cuối trang.
+
+Tiêu đề được phân cấp theo `h1`, `h2`, `h3`. Ảnh sử dụng `alt`; liên kết có đích điều hướng tương ứng. Các nhóm nội dung được trình bày bằng `ul`, `li`, còn thông tin thuộc tính của sách được tổ chức bằng `dl`, `dt`, `dd`.
+
+Những nội dung bổ sung gồm menu năm mục, nhóm chủ đề đọc, mô tả ngắn trong thẻ, thông tin chi tiết mở rộng, hướng dẫn khám phá sách và các mục hỏi đáp bằng `details`, `summary`.
+
+### 10.3. Hoàn thiện CSS và thực hành selector, Box Model
+
+CSS tiếp tục được quản lý trong `css/style.css` và liên kết bằng đường dẫn tương đối từ `index.html`. Các nhóm quy tắc được bổ sung để định dạng đầy đủ những khu vực HTML mới.
+
+Các nội dung đã thực hành:
+
+- Element selector, ví dụ `img`, để thiết lập quy tắc chung cho hình ảnh.
+- Class selector, ví dụ `.book-card` và `.book-card__body`, để định dạng các thành phần cùng loại.
+- Descendant selector, ví dụ `.book-card h3` và `.book-card__image img`, để giới hạn phạm vi định dạng.
+- `margin` để tạo khoảng cách bên ngoài các nhóm thông tin.
+- `padding` để tạo khoảng đệm trong khung ảnh, phần thân thẻ và liên kết.
+- `border`, `border-radius` để phân chia vùng nội dung và điều chỉnh góc bo.
+- `box-sizing: border-box` để kiểm soát kích thước khi có khoảng đệm và đường viền.
+
+Ở cấu hình máy tính, phần thân thẻ có padding 24px, tên sách có margin-bottom 8px và mô tả có margin `12px 0 22px`. Các giá trị được điều chỉnh riêng cho màn hình nhỏ.
+
+### 10.4. Thiết kế lại thẻ sách theo bố cục ngang
+
+Thẻ dọc của Buổi 1 được chuyển sang thẻ ngang để tạo khác biệt rõ về bố cục:
+
+- Ảnh bìa nằm bên trái, thông tin sách nằm bên phải.
+- Khu vực “Sách nổi bật” có thanh tiêu đề nền đỏ đậm.
+- Mỗi thẻ có đường viền nhấn ở cạnh trái.
+- Thể loại được trình bày thành nhãn có nền và khoảng đệm.
+- Tên sách được xuống dòng đầy đủ, không giới hạn bằng dấu ba chấm.
+- Giá bán tiếp tục nổi bật hơn giá gốc và thông tin giảm giá.
+- Trên máy tính, liên kết xem chi tiết nằm cạnh nhóm giá; trên điện thoại, liên kết nằm dưới nhóm giá.
+
+Bên trong `.book-card`, Grid chia vùng ảnh và vùng thông tin. Phần `.book-card__body` sử dụng Flexbox theo cột; nhóm giá dùng `margin-top: auto` để tận dụng khoảng trống còn lại trong phần thân.
+
+Cấu hình này thay thế cách tổ chức toàn bộ thẻ bằng Flexbox dọc ở Buổi 1. Nhóm `.book-card__purchase` cũng được tổ chức bằng Grid trong phiên bản Buổi 2.
+
+### 10.5. Thực hành Flexbox trên menu điều hướng
+
+Menu chính có năm mục: Giới thiệu, Chủ đề đọc, Sách nổi bật, Thông tin sách và Hướng dẫn.
+
+Phần tử cha là `ul.site-nav__list`; năm `li` là các phần tử con trực tiếp. Cấu hình máy tính sử dụng:
+
+- `display: flex` để tạo phần tử chứa Flexbox.
+- `flex-direction: row` để sắp xếp theo hàng ngang.
+- `justify-content: space-between` để phân bố khoảng trống theo chiều ngang.
+- `align-items: center` để căn giữa các mục theo chiều dọc của hàng.
+- `gap: 12px` để tạo khoảng cách giữa các mục.
+- `flex-wrap: wrap` để cho phép xuống dòng khi cần.
+
+Menu được bổ sung nền đỏ đậm và các ô liên kết có đường viền, góc bo. Trên điện thoại, các mục được sắp xếp xuống dòng bằng Flexbox.
+
+Phần thực hành đã so sánh `justify-content: flex-start`, `center`, `space-between`; thay đổi `align-items` khi tăng tạm chiều cao vùng chứa; và quan sát khoảng cách với các giá trị gap khác nhau. Cấu hình cuối trên máy tính được đưa về `space-between`, `center`, gap 12px và min-height 88px.
+
+### 10.6. Hoàn thiện danh sách bằng CSS Grid
+
+Danh sách tiếp tục sử dụng phần tử cha `.book-grid` chứa bốn `article.book-card`. Phần HTML này được giữ lại, không tạo lại danh sách sản phẩm.
+
+Cấu hình hiện tại:
+
+- Từ 1200px: hai cột, sử dụng `repeat(2, minmax(0, 1fr))`.
+- Từ 600px đến dưới 1200px: một cột.
+- Dưới 600px: một cột, điều chỉnh khoảng cách và nội dung cho điện thoại.
+- Khoảng cách trên máy tính: 28px giữa các hàng và 24px giữa các cột.
+- Khoảng cách trên điện thoại: 18px.
+
+Các thẻ cùng hàng giãn theo chiều cao của ô lưới. `min-width: 0` hỗ trợ thẻ co lại theo chiều rộng được phân chia.
+
+Trong quá trình thực hành, số cột được đổi giữa một và hai để quan sát cách bốn sách tự xếp hàng. Gap được thử với 12px, 24px và 32px trước khi đưa về cấu hình cuối.
+
+Grid của `.book-grid` điều khiển toàn bộ danh sách; Grid của `.book-card` chỉ điều khiển bố cục bên trong một sản phẩm.
+
+### 10.7. Giữ tỷ lệ ảnh và hoàn thiện phản hồi tương tác
+
+Ảnh JPG tiếp tục dùng kích thước gốc 800 × 1120px, tương ứng tỷ lệ 5:7. CSS sử dụng `aspect-ratio: 5 / 7`, giới hạn chiều rộng và `object-fit: contain` để giữ đầy đủ nội dung bìa.
+
+Liên kết “Xem chi tiết” được bổ sung các trạng thái:
+
+- Hover: nền đỏ đậm, chữ trắng, bóng nhẹ và dịch chuyển lên 2px.
+- Transition: chuyển đổi màu nền, bóng và vị trí trong 0,2 giây.
+- Focus-visible: đường viền xanh 3px, cách mép liên kết 4px, hỗ trợ nhận biết vị trí khi điều hướng bằng bàn phím.
+- Active: phản hồi khi nhấn giữ liên kết.
+
+Transform và outline không làm tăng kích thước bố cục của liên kết. Đích điều hướng đến phần thông tin sách được giữ nguyên.
+
+### 10.8. Phát hiện và điều chỉnh một vấn đề trên điện thoại
+
+Ở chiều rộng 390px, ảnh bìa nằm gần phía trên cột ảnh, trong khi phần dưới còn nhiều khoảng trống. Nguyên nhân được xác định từ khung ảnh sử dụng Flexbox theo hàng với `align-items: flex-start`, đồng thời chiều cao khung giãn theo nội dung của thẻ.
+
+Thay đổi chính là điều chỉnh `align-items` từ `flex-start` thành `center` trong quy tắc dành cho khung ảnh trên điện thoại. Người thực hiện trực tiếp chỉnh CSS, lưu thay đổi và kiểm tra lại trên trình duyệt cá nhân.
+
+Kết quả được xác nhận: ảnh bìa đã nằm giữa theo chiều dọc của cột trái. Nội dung sách, tỷ lệ ảnh và chiều rộng các vùng trong thẻ được giữ nguyên.
+
+### 10.9. Kết quả kiểm tra phiên bản Buổi 2
+
+Các chiều rộng đã kiểm tra gồm 1366px, 768px và 390px:
+
+- 1366px: danh sách hai cột, không ghi nhận tràn ngang.
+- 768px: danh sách một cột, nội dung nằm trong vùng hiển thị.
+- 390px: danh sách một cột, kiểm tra ảnh, tên, giá và liên kết trong thẻ ngang.
+
+Các kết quả ghi nhận:
+
+- Trang HTML mở được và CSS được áp dụng.
+- Bốn ảnh JPG tải được, giữ đúng tỷ lệ.
+- Liên kết chi tiết và quay lại của cả bốn sách dẫn đến đúng nội dung.
+- Các đích liên kết nội bộ tồn tại; không ghi nhận ID trùng trong lần kiểm tra.
+- Không ghi nhận tràn ngang hoặc nội dung tràn nghiêm trọng trong các thẻ tại ba chiều rộng trên.
+- Hover tạo phản hồi trực quan; điều hướng bằng Tab hiển thị viền focus.
+- Thay đổi căn ảnh trên điện thoại được người thực hiện kiểm tra và xác nhận sau khi cập nhật.
+
+Những kết quả này ghi nhận phiên bản Buổi 2, bổ sung cho kết quả kiểm tra Buổi 1 ở các mục phía trên.
+
+### 10.10. Mã nguồn, cách chạy và tài liệu liên quan
+
+Dự án tiếp tục sử dụng cùng repository và GitHub Pages:
+
+- [GitHub repository](https://github.com/huytran31241023748-code/ecommerce-ui-improvement).
+- [Website Góc sách](https://huytran31241023748-code.github.io/ecommerce-ui-improvement/).
+
+Cách chạy cục bộ được giữ nguyên: tải mã nguồn, giữ thư mục `css/` và `images/` bên cạnh `index.html`, sau đó mở `index.html` bằng trình duyệt. CSS sử dụng đường dẫn `css/style.css`; ảnh sử dụng đường dẫn dạng `images/mien-yen.jpg`.
+
+Báo cáo Buổi 2 trình bày các bước thực hành, vấn đề phát hiện, cách sửa, ảnh minh họa và câu trả lời cho bảy câu hỏi kiến thức. Prompt và nhật ký sử dụng AI được trình bày trong [AI_USAGE.md](AI_USAGE.md).
