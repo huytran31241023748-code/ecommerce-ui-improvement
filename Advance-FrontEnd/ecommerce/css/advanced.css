@@ -1,0 +1,71 @@
+/* Chương 6, Nhóm 2: bổ sung chức năng trên giao diện Góc sách. */
+html { font-size: 16px; }
+body { font-size: 16px; }
+.header-note { min-height: 44px; display: inline-flex; align-items: center; }
+.book-card { position: relative; }
+.book-card__body { padding-top: 48px; }
+.product-badges {
+  position: absolute; top: 12px; left: 12px; right: 12px; z-index: 2;
+  display: flex; justify-content: space-between; gap: 8px; pointer-events: none;
+}
+.badge-offer, .badge-status { border-radius: 5px; padding: 5px 9px; font-size: 12px; font-weight: 700; line-height: 1.5; }
+.badge-offer { background: #a82732; color: white; }
+.badge-new { background: #dcefe6; color: #1f5a40; }
+.badge-best { background: #f6e9be; color: #6a4a08; }
+.stock-block { margin: 10px 0 16px; }
+.stock-label { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 10px; margin-bottom: 6px; font-size: 13px; color: #47534e; }
+.stock-label span:first-child { font-weight: 700; }
+.stock-block .progress { height: 9px; margin: 0; background: #e8ece9; border-radius: 10px; box-shadow: none; }
+.stock-block .progress-bar { box-shadow: none; }
+.stock-block .progress-bar-success { background: #347b62; }
+.stock-block .progress-bar-warning { background: #ae7318; }
+.sample-rating { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+.sample-rating > span { font-size: 12px; color: #626660; }
+.rating-container .filled-stars { color: #a46c0a; -webkit-text-stroke: 0; text-shadow: none; }
+.rating-container .empty-stars { color: #c8c7bf; }
+.rating-container.rating-xs { font-size: 21px; }
+.sample-rating .rating-container { line-height: 1.2; }
+.sample-rating .rating-stars:focus { outline: 0; }
+.book-card__description { margin-bottom: 14px; }
+.details-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+.book-detail { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 36px; padding: 30px; }
+.detail-copy { min-width: 0; }
+.detail-copy > p { line-height: 1.8; font-size: 15px; }
+.book-gallery { min-width: 0; align-self: start; }
+.gallery-stage { display: flex; align-items: center; justify-content: center; padding: 24px; border: 1px solid #e2d9cc; border-radius: 10px; background: #f1eadf; }
+.gallery-stage .xzoom { display: block; width: 100%; max-width: 245px; height: auto; margin: 0; box-shadow: 0 8px 20px #24352926; }
+.gallery-thumbs { display: flex; gap: 10px; padding: 14px 0 10px; }
+.gallery-thumbs a { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 7px; color: #4d5550; font-size: 12px; text-decoration: none; border-radius: 6px; }
+.gallery-thumbs a:hover, .gallery-thumbs a:focus-visible { background: #f8e9e9; }
+.gallery-thumbs .xzoom-gallery { width: 46px; height: 65px; object-fit: cover; margin: 0; border: 2px solid transparent; box-shadow: none; }
+.gallery-thumbs .xzoom-gallery.xactive { border-color: #a82732; }
+.gallery-help { margin: 0 0 8px; font-size: 13px; color: #5e635f; line-height: 1.7; }
+.full-image-link { display: inline-flex; align-items: center; min-height: 44px; color: #801b25; font-size: 14px; }
+.xzoom-preview, .xzoom-lens { z-index: 100; }
+.your-rating { margin-top: 18px; padding: 20px; border: 1px solid #e8dace; border-radius: 9px; background: #fcf9f5; }
+.your-rating h4 { margin: 0 0 12px; font-size: 16px; }
+.your-rating .rating-container { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.your-rating .rating-container.rating-sm { font-size: 28px; }
+.your-rating .caption { margin: 0; font-size: 14px; }
+.your-rating .clear-rating { font-size: 22px; }
+.your-rating .rating-stars:focus-visible { outline: 3px solid #175b99; outline-offset: 4px; }
+.rating-feedback { margin: 10px 0 0; color: #5d645e; font-size: 13px; line-height: 1.7; }
+.sample-note { font-size: 13px; }
+@media (max-width: 799px) {
+  .book-detail { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .book-gallery { width: min(100%, 340px); margin: auto; }
+}
+@media (max-width: 599.98px) {
+  .header-inner { flex-wrap: wrap; gap: 0 12px; }
+  .header-note { display: inline-flex; font-size: 13px; }
+  .book-card { grid-template-columns: 92px minmax(0, 1fr); }
+  .book-card__body { padding-top: 48px; }
+  .book-card__image { padding-top: 42px; }
+  .product-badges { left: 8px; right: 8px; top: 10px; }
+  .badge-offer, .badge-status { font-size: 11px; padding: 4px 6px; }
+  .book-detail { padding: 20px; }
+  .book-detail__facts { grid-template-columns: minmax(0, 1fr); }
+  .sample-rating { gap: 5px; }
+  .stock-label { font-size: 12px; }
+  .your-rating { padding: 15px; }
+}
