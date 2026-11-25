@@ -19,4 +19,4 @@ Moodle có thể không cung cấp biến `$` hoặc `jQuery` toàn cục. Mã h
 - Bài không có dòng Due được ghi là **Không hiển thị hạn nộp trên trang môn học**.
 - Theo đúng đề, bộ chọn không tính hoạt động Turnitin là `.modtype_assign`.
 
-Đã đối chiếu dữ liệu bằng cách đọc DOM trực tiếp trên LMS. Chưa xác nhận chạy file này trong Console của LMS; ảnh nguồn LMS không thay thế minh chứng Console.
+Đã đối chiếu dữ liệu bằng cách đọc DOM trực tiếp trên LMS. Người học đã chạy các đoạn mã jQuery tương ứng trong Console trên máy cá nhân và cung cấp hai ảnh kết quả: bài nộp thứ 5 và bảng chủ đề/bài tập/hạn nộp đầy đủ. Ảnh nguồn LMS được lưu riêng, không thay thế hai ảnh Console.

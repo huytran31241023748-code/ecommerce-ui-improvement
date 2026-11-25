@@ -1,5 +1,11 @@
 # Chương 6 – Advanced FrontEnd, Nhóm 2
 
+## Cập nhật đối chiếu hướng dẫn gốc
+
+Bản e-commerce đã được sửa thành ba trang theo `HuongDanLamWebsiteBangBootstrap.pdf`. Xem bảng đối chiếu từng mục và kết quả kiểm tra tại [ecommerce/README.md](ecommerce/README.md). Các ghi chép chặng 1 phía dưới mô tả phiên bản ban đầu, không phải kết luận hoàn thành toàn bộ hướng dẫn.
+
+Phần jQuery đã có mã tại [lms-jquery](lms-jquery/) và người học đã cung cấp ảnh chạy Console thành công cho cả hai yêu cầu. Flappy Bird chưa thực hiện.
+
 Tiếp tục sử dụng repository và giao diện bán sách Góc sách của học phần.
 
 ## Các chặng thực hiện
