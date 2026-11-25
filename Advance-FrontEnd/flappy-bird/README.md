@@ -16,4 +16,4 @@ Giữ ArrowDown để bay lên, nhả để rơi. P tạm dừng/tiếp tục. K
 
 Cải tiến: requestAnimationFrame cho chuyển động theo thời gian; giới hạn vận tốc; khe cột rộng hơn; tạm dừng khi mất focus; không tạo timer trùng; chơi lại không reload; lưu kỷ lục trên thiết bị.
 
-Đã kiểm tra thực tế bằng bàn phím: bắt đầu, bay, va chạm, chơi lại, tạm dừng/tiếp tục; đạt 5 điểm đổi Level 2 / 30 ms và 20 điểm đổi Level 3 / 25 ms. Các mốc 40 và 50 cần được phân biệt giữa kiểm thử logic và ảnh chơi thực tế. Không có chức năng cộng điểm hoặc bỏ va chạm.
+Đã kiểm tra thực tế bằng bàn phím: bắt đầu, bay, va chạm, chơi lại, tạm dừng/tiếp tục; chơi qua 5 điểm (Level 2 / 30 ms), 20 điểm (Level 3 / 25 ms), 40 điểm (Level 4 / 20 ms), 50 điểm (Chiến thắng). Sau chiến thắng, vị trí chim, cột và điểm giữ nguyên qua hai lần quan sát. Có ảnh chụp thật 1360×765 cho từng mốc. Không có chức năng cộng điểm hoặc bỏ va chạm.
