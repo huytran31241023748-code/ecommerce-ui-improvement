@@ -2,7 +2,7 @@
 
 Nguồn hướng dẫn đã đọc: https://freetuts.net/viet-game-flappy-bird-don-gian-voi-html-css-va-jquery-713.html
 
-Giữ cấu trúc container, bird, pole_1/pole_2 và ý tưởng va chạm của bài hướng dẫn; vòng lặp được viết lại, không sao chép toàn bộ mã. Chim đưa sách và cột màu đỏ sách được cá nhân hóa theo Góc sách.
+Giữ cấu trúc container, bird, pole_1/pole_2 và ý tưởng va chạm của bài hướng dẫn; vòng lặp được viết lại, không sao chép toàn bộ mã. Hai ảnh SVG cục bộ: chim đưa sách và cột gáy sách được cá nhân hóa theo Góc sách.
 
 | Điểm | Level | Interval |
 | --- | --- | --- |
@@ -16,4 +16,4 @@ Giữ ArrowDown để bay lên, nhả để rơi. P tạm dừng/tiếp tục. K
 
 Cải tiến: requestAnimationFrame cho chuyển động theo thời gian; giới hạn vận tốc; khe cột rộng hơn; tạm dừng khi mất focus; không tạo timer trùng; chơi lại không reload; lưu kỷ lục trên thiết bị.
 
-Trạng thái: bản mã đầu tiên, đang kiểm tra. Chưa có minh chứng chơi qua đủ bốn level hoặc chiến thắng. Không dùng ảnh giả hoặc chế độ tự cộng điểm làm minh chứng.
+Đã kiểm tra thực tế bằng bàn phím: bắt đầu, bay, va chạm, chơi lại, tạm dừng/tiếp tục; đạt 5 điểm đổi Level 2 / 30 ms và 20 điểm đổi Level 3 / 25 ms. Các mốc 40 và 50 cần được phân biệt giữa kiểm thử logic và ảnh chơi thực tế. Không có chức năng cộng điểm hoặc bỏ va chạm.

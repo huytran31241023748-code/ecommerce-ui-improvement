@@ -12,12 +12,13 @@
  function stopLoops(){clearInterval(timer);timer=null;cancelAnimationFrame(raf);raf=null;last=0;}
  function finish(victory){running=false;won=victory;up=false;stopLoops();if(points>best){best=points;try{localStorage.setItem('gocsach-flappy-best',String(best));}catch(e){}}display();$('#message').text(victory?'Chiến thắng!':'Chuyến bay đã kết thúc');$('#summary').text(victory?'Bạn đã đạt 50 điểm và hoàn thành cả 4 level.':'Bạn đạt '+points+' điểm. Nhấn Chơi lại để thử tiếp.');$('#overlay').prop('hidden',false);$('#play_btn').prop('hidden',true);$('#restart_btn').prop('hidden',false);}
  function startTimer(){clearInterval(timer);timer=setInterval(tick,interval);}
- function tick(){if(!running||paused)return;var s=size();x-=5;
+ function tick(){if(!running||paused)return;var s=size();
  // Chỉ cộng sau khi cạnh phải của cặp cột vượt qua cạnh trái của chim.
  if(!scored&&x+s.pw<s.w*.19){scored=true;points++;if(points>=50){points=50;finish(true);return;}var c=config(points);if(c.level!==level){level=c.level;interval=c.interval;startTimer();}display();}
  if(x < -s.pw)resetPole();}
  function render(time){if(!running||paused)return;var s=size();var dt=last?Math.min((time-last)/1000,.035):0;last=time;
  // Vật lý theo thời gian, độc lập tốc độ lặp bàn phím và tốc độ cột.
+ x-=(10000/interval)*dt;
  velocity+= (up?-850:650)*dt;velocity=Math.max(-210,Math.min(240,velocity));y+=velocity*dt;
  var bx=s.w*.19;var overlap=bx+s.bw>x&&bx<x+s.pw;
  if(y<=48||y+s.bh>=s.h||(overlap&&(y<gapY||y+s.bh>gapY+gap))){finish(false);return;}
